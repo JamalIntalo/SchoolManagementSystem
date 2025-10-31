@@ -43,4 +43,18 @@ public void setContactNumber(String contact){
 public void setMediumOfStudy(String medium){
     this.mediumOfStudy=medium;
  }
+
+
+//METHODS FOR SCHOOLMANAGEMENT CLASS
+  //Isopen Method
+public boolean isOpen(){
+    return true;
+}
+ //SchoolDetails method
+ void display(){
+  System.out.println("School Name: " +getSchoolName());
+  System.out.println("Address: " +getAddress());
+  System.out.println("Contact Number: " +getContactNumber());
+  System.out.println("Medium Of Study: "+getMediumOfStudy());
+}
 }
