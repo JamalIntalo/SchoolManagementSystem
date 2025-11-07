@@ -51,10 +51,19 @@ public boolean isOpen(){
     return true;
 }
  //SchoolDetails method
- void display(){
+ void displaySchoolDetails(){
   System.out.println("School Name: " +getSchoolName());
   System.out.println("Address: " +getAddress());
   System.out.println("Contact Number: " +getContactNumber());
   System.out.println("Medium Of Study: "+getMediumOfStudy());
 }
+
+//SCHOOLMANAGEMENT CONSTRUCTOR
+public SchoolManagement(String sN,String addr,String contact,String medium){
+    schoolName=sN;
+    address=addr;
+    contactNumber=contact;
+    mediumOfStudy=medium;
 }
+}
+//runschool Method
