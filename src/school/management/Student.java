@@ -1,3 +1,6 @@
+//Implementation by JAMAL
+//STUDENT CLASS
+
 package school.management;
 import java.util.Scanner;
 public class Student {

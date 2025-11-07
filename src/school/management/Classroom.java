@@ -49,7 +49,7 @@ public class Classroom {
         System.out.println("Class Name: "+ getClassName());
         System.out.println("Teacher ID: "+ getTeacherId());
         System.out.println("Student Count: "+ getStudentCount());
-        System.out.println("Equipment Count: "+ getequipmentId());
+        System.out.println("Classroom Equipment Count: "+ getequipmentId());
     }
 //CONSTRUCTOR FOR CLASSROOM
 public Classroom(int cId,String cName,int tId,int stuCount,int equiId){

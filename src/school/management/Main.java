@@ -6,6 +6,8 @@ package school.management;
     public static void main(String[] args){
         SchoolManagement mySchool= new SchoolManagement("Islamic Uni","40441 Abubakr as Siddiq rd.","0595318390","English/Arabic");
         mySchool.displaySchoolDetails();
+        mySchool.setOpen(false);
+        mySchool.isOpen();
 
         System.out.println( );
 
@@ -16,6 +18,12 @@ package school.management;
 
         Student s1=new Student(100,"Ali", 1, 200, 300);
         s1.displayStudentDetails();
+
+        System.out.println( );
+
+        Lab l1=new Lab(400,300,"CHEM LAB",501);
+        l1.setOccupied(true);
+        l1.isOccupied();
 
 
     }
