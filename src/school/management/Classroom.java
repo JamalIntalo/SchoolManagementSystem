@@ -11,37 +11,17 @@ public class Classroom {
     private int equipmentId;
     
 //GETTERS FOR VARIABLES
-    public int getClassId(){
-        return classId;
-    }
-    public String getClassName(){
-        return className;
-    }
-    public int getTeacherId(){
-        return teacherId;
-    }
-    public int getStudentCount(){
-        return studentCount;
-    }
-    public int getequipmentId(){
-        return equipmentId;
-    }
+    public int getClassId(){return classId;}
+    public String getClassName(){return className;}
+    public int getTeacherId(){return teacherId;}
+    public int getStudentCount(){return studentCount;}
+    public int getequipmentId(){return equipmentId;}
 //SETTERS FOR VARIABLES
-    public void setClassId(int classId){
-        this.classId=classId;
-    }
-    public void setClassName(String className){
-        this.className=className;
-    }
-    public void setTeacherId(int teacherId){
-        this.teacherId=teacherId;
-    }
-    public void setStudentCount(int studentCount){
-        this.studentCount=studentCount;
-    }
-    public void setequipmentId(int equipmentId){
-        this.equipmentId=equipmentId;
-    }
+    public void setClassId(int classId){this.classId=classId;}
+    public void setClassName(String className){this.className=className;}
+    public void setTeacherId(int teacherId){this.teacherId=teacherId;}
+    public void setStudentCount(int studentCount){this.studentCount=studentCount;}
+    public void setequipmentId(int equipmentId){this.equipmentId=equipmentId;}
 //METHOD FOR CLASSROOM CLASS
   //ClassDetails Method
     void displayClassDetails(){

@@ -29,7 +29,7 @@ public void setOpen(boolean open){this.open=open;}
 void isOpen(){
     if(open){
         System.out.println("SCHOOL IS OPEN");
-    }else System.out.println("SCHHOL IS CLOSED");
+    }else System.out.println("SCHOOL IS CLOSED");
 }
  //SchoolDetails method
  void displaySchoolDetails(){

@@ -24,6 +24,11 @@ package school.management;
         Lab l1=new Lab(400,300,"CHEM LAB",501);
         l1.setOccupied(true);
         l1.isOccupied();
+        System.out.println( );
+
+        Employee E1=new Employee(1,"Faycal", 20000,23);
+        E1.setCheckIn(true);
+        E1.checkIn();
 
 
     }
