@@ -30,6 +30,9 @@ package school.management;
         E1.setCheckIn(true);
         E1.checkIn();
 
-
+        System.out.println( );
+        Noticeboard N1=new Noticeboard("MR. IBRAHIM");
+        N1.addContent("SECTION 3302 WILL NOT BE AVAILABLE THIS SEMESTER!");
+        N1.displayNoticeBoard();
     }
  }

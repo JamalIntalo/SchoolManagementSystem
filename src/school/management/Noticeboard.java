@@ -1,20 +1,21 @@
+//IMPLMENTATION JAMAL
+//NOTICEBOARD CLASS
 package school.management;
 
-//import java.util.ArrayList;
+import java.util.ArrayList;
 
 public class Noticeboard {
-    private String newsList;
+    private ArrayList<String> newsList=new ArrayList<>();
     private String inChargeName;
 
 //GETTERS
-public String getNewsList(){return newsList;}
+public ArrayList<String> getNewsList(){return newsList;}
 public String getInChargeName(){return inChargeName;}
 //SETTERS
-public void setNewsList(String news){this.newsList=news;}
+public void setNewsList(ArrayList<String> news){this.newsList=news;}
 public void setInChargeName(String inCharge){this.inChargeName=inCharge;}
 //CONSTRUCTORS
-public Noticeboard(String news,String inCharge){
-    this.newsList=news;
+public Noticeboard(String inCharge){
     this.inChargeName=inCharge;
 }
 //DISPLAY METHOD
@@ -22,7 +23,7 @@ void displayNoticeBoard(){
     System.out.println("NEWS LIST ON NOTICE BOARD: "+ getNewsList());
 }
 //ADD-CONTENT METHOD
-void addContent(){
-
+void addContent(String content){
+    newsList.add(content);
 }
 }
