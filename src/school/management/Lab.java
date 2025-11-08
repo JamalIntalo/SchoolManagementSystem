@@ -6,18 +6,21 @@ public class Lab {
     private String labName;
     private int equipmentId;
     private boolean occupied;
+    private Equipment equipments; //COMPOSITION IMPLEMENTATION 
 //GETTERS FOR VARIABLES
 public int getLabId(){return labId;}
 public int getInChargeId(){return inChargeId;}
 public String getLabName(){return labName;}
 public int getequipmentId(){return equipmentId;}
 public boolean getOccupied(){return occupied;}
+public Equipment getEquipments(){return equipments;}
 //SETTERS FOR VARIABLES 
 public void setLabId(int labId){this.labId=labId;}
 public void setInChargeId(int inChargeId){this.inChargeId=inChargeId;}
 public void setLabName(String labName){this.labName=labName;}
 public void setequipmentId(int equipmentId){this.equipmentId=equipmentId;}
 public void setOccupied(boolean occupied){this.occupied=occupied;}
+public void setEquipments(Equipment equipments){this.equipments=equipments;}
 // CONSTRUCTOR
 Lab(int lId,int inId,String lName,int equiId){
     this.labId=lId;

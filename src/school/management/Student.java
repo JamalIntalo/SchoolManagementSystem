@@ -13,6 +13,8 @@ public class Student {
     private int busId;
     private double totalFees;
     private double feesPaid;
+    private Classroom classroom; //ASSOCIATION REFERENCING TO CLASSROOM
+    private Noticeboard noticeboard; //ASSOCIATION REFERENCING TO NOTICEBOARD
 
 //GETTERS FOR VARIABLES
 public int getStudentId(){return studentId;}
@@ -22,6 +24,8 @@ public int getSection(){return section;}
 public int getBusId(){return busId;}
 public double getTotalFees(){return totalFees;}
 public double getFeesPaid(){return feesPaid;}
+public Classroom getClassroom(){return classroom;}
+public Noticeboard getNoticeboard(){return noticeboard;}
 
 //SETTERS FOR VARIABLES
 public void setStudentId(int studentId){this.studentId=studentId;}
@@ -31,6 +35,8 @@ public void setSection(int section){this.section=section;}
 public void setBusId(int busId){this.busId=busId;}
 public void setTotalFees(double totalFees){this.totalFees=totalFees;}
 public void setFeesPaid(double feesPaid){this.feesPaid=feesPaid;}
+public void setClassroom(Classroom classroom){this.classroom=classroom;}
+public void setNoticeboard(Noticeboard noticeboard){this.noticeboard=noticeboard;}
 
 // METHOD FOR STUDENT DETAILS
 void displayStudentDetails(){
@@ -39,7 +45,8 @@ void displayStudentDetails(){
     System.out.println("Class ID: "+ getClassId());
     System.out.println("Section: "+ getSection());
     System.out.println("Bus Id: "+ getBusId());
-    displayFeesDetails();
+}
+void payFees(){
     Scanner Scanner=new Scanner(System.in);
     System.out.println("Enter Amount to pay: ");
     int amountToPay=Scanner.nextInt();

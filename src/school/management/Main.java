@@ -4,8 +4,10 @@
 package school.management;
  class Main{
     public static void main(String[] args){
+
         SchoolManagement mySchool= new SchoolManagement("Islamic Uni","40441 Abubakr as Siddiq rd.","0595318390","English/Arabic");
-        mySchool.displaySchoolDetails();
+        mySchool.runSchool();
+        /*mySchool.displaySchoolDetails();
         mySchool.setOpen(false);
         mySchool.isOpen();
 
@@ -33,6 +35,6 @@ package school.management;
         System.out.println( );
         Noticeboard N1=new Noticeboard("MR. IBRAHIM");
         N1.addContent("SECTION 3302 WILL NOT BE AVAILABLE THIS SEMESTER!");
-        N1.displayNoticeBoard();
+        N1.displayNoticeBoard();*/
     }
  }
