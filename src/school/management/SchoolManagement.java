@@ -1,7 +1,7 @@
 //Implemantation by Jamal Intalo
 //This is the schoolManagement class
 package school.management;
-//import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 public class SchoolManagement{
     private String schoolName;
@@ -64,7 +64,7 @@ public void runSchool(){
     //OBJECTS CREATION THAT ARE ALREADY AVAILABLE
     //Noticeboard noticeBoard =new Noticeboard("SCHOOL COORESPONDENT: UMAR ABDI");
     //String[] members={"MR. HAMZA","MR. ABUBAKR","MR. BANDAR","MRS. ZAYNAB"};
-    //Department mDepartment=new Department(500,"MATHS DEPARTMENT","MR. IBRAHIM",members);
+    Department deptObj=null;
     //Lab lab=new Lab(600, 200,"CHEMISTRY LAB",700);
 
     //MAIN MENU LOOP
@@ -77,13 +77,14 @@ public void runSchool(){
       System.out.println("4.ADD EMPLOYEE");
       System.out.println("5.VIEW EMPLOYEE DETAILS");
       System.out.println("6.ADD DEPARTMENT DETAILS");
-      System.out.println("7.ADD CONTENT TO NOTICEBOARD");
-      System.out.println("8.DISPLAY NOTICEBOARD");
-      System.out.println("9.CHECK IF SCHOOL IS OPEN");
-      System.out.println("10.VIEW LAB DETAILS");
-      System.out.println("11.CHECK IF LAB IS OCCUPIED");
-      System.out.println("12.VIEW CLASSROOM DETAILS");
-      System.out.println("13.EXIT PROGRAM");
+      System.out.println("7.VIEW DEPARTMENT DETAILS");
+      System.out.println("8.ADD CONTENT TO NOTICEBOARD");
+      System.out.println("9.DISPLAY NOTICEBOARD");
+      System.out.println("10.CHECK IF SCHOOL IS OPEN");
+      System.out.println("11.VIEW LAB DETAILS");
+      System.out.println("12.CHECK IF LAB IS OCCUPIED");
+      System.out.println("13.VIEW CLASSROOM DETAILS");
+      System.out.println("14.EXIT PROGRAM");
 
       System.out.println("PLEASE ENTER YOUR CHOICE: ");
       int choice=Scanner.nextInt();
@@ -100,10 +101,10 @@ public void runSchool(){
           System.out.println("ENTER TYPE: ");
           int type=Scanner.nextInt();
           System.out.println("ENTER STUDENT ID: ");
-          int id=Scanner.nextInt();
+          int stid=Scanner.nextInt();
           Scanner.nextLine();
           System.out.println("ENTER STUDENT NAME: ");
-          String name=Scanner.nextLine();
+          String stname=Scanner.nextLine();
           System.out.println("ENTER CLASS ID: ");
           int classId=Scanner.nextInt();
           System.out.println("ENTER SECTION NUMBER: ");
@@ -112,16 +113,16 @@ public void runSchool(){
           int bus=Scanner.nextInt();
 
           if(type==1){
-            student=new PrimaryStudent(id, name, id, section, classId);
+            student=new PrimaryStudent(stid, stname, classId, section, bus);
           }else if (type==2){
-            student=new HigherSecondaryStudent(id, name, id, section, classId);
+            student=new HigherSecondaryStudent(stid, stname, classId, section, bus);
           }else{
             System.out.println("INVALID CHOICE! GOING TO DEFAULT:PRIMARY");
-            student=new PrimaryStudent(id, name, id, section, classId);
+            student=new PrimaryStudent(stid, stname, classId, section, bus);
           }
 
-          student=new Student(id,name,classId,section,bus);
-          System.out.println("STUDENT ADDED SUCCESSFULLY!");
+          student=new Student(stid,stname,classId,section,bus);
+          System.out.println("+++STUDENT ADDED SUCCESSFULLY!+++");
           break;
 
           case 2:
@@ -138,31 +139,63 @@ public void runSchool(){
           System.out.println("CHOOSE TYPE OF EMPLOYEE: ");
           int type0=Scanner.nextInt();
           System.out.println("ENTER EMPLOYEE ID: ");
-          int id0=Scanner.nextInt();
+          int empid=Scanner.nextInt();
           Scanner.nextLine();
           System.out.println("ENTER EMPLOYEE NAME: ");
-          String name0=Scanner.nextLine();
+          String empname=Scanner.nextLine();
           System.out.println("ENTER SALARY: ");
           int sal=Scanner.nextInt();
           System.out.println("ENTER DEPARTMENT ID: ");
           int dept=Scanner.nextInt();
 
           if(type0==1){
-            employee= new Teacher(id0, name0, sal, dept);
+            employee= new Teacher(empid, empname, sal, dept);
           }else if(type0==2){
             //employee=new supportstaff;
           }else{
             System.out.println("REVERTING TO DEFAULT: TEACHER");
-            employee=new Teacher(id0, name0, sal, dept);
+            employee=new Teacher(empid, empname, sal, dept);
           }
-          employee=new Teacher(id0, name0, sal, dept);
-          System.out.println("EMPLOYEE ADDED SUCCESSFULLY!");
+          employee=new Teacher(empid, empname, sal, dept);
+          System.out.println("+++EMPLOYEE ADDED SUCCESSFULLY!+++");
           break;
 
           case 5:
           employee.displayEmployeeDetails();
+          break;
 
-          case 13:
+          case 6:
+          System.out.println("SET DEPARTMENT ID: ");
+          int deptId=Scanner.nextInt();
+          Scanner.nextLine();
+          System.out.println("SET DEPARTMENT NAME: ");
+          String deptName=Scanner.nextLine();
+          System.out.println("SET WHO IS IN-CHARGE OF DEPARTMENT: ");
+          String inChName=Scanner.nextLine();
+          System.out.println("LIST OF MEMBERS IN DEPARTMENT(A DEPT CAN ONLY HAVE 4 MEMBERS): ");
+          String [] members=new String[4];
+          
+          System.out.println("ENTER MEMBER 1 NAME: ");
+          members[0] = Scanner.nextLine();
+
+          System.out.println("ENTER MEMBER 2 NAME: ");
+          members[1] = Scanner.nextLine();
+
+          System.out.println("ENTER MEMBER 3 NAME: ");
+          members[2] = Scanner.nextLine();
+
+          System.out.println("ENTER MEMBER 4 NAME: ");
+          members[3] = Scanner.nextLine();
+
+          deptObj=new Department(deptId, deptName, inChName, members);
+          System.out.println("+++DEPARTMENT ADDED SUCCESFULLY+++");
+          break;
+
+          case 7:
+          deptObj.displayDepartmentDetails();
+
+
+          case 14:
           System.out.println("EXITING...");
           return;
 

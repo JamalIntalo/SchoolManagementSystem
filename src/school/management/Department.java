@@ -2,6 +2,9 @@
 //DEPARTMENT CLASS
 
 package school.management;
+
+import java.util.Arrays;
+
 public class Department {
     private int departmentId;
     private String departmentName;
@@ -32,7 +35,8 @@ void displayDepartmentDetails(){
     System.out.println("Department ID_NO: "+ getDepartmentId());
     System.out.println("Department name: "+ getDepartmentName());
     System.out.println("Department in charge person: "+ getInChargeName());
-    System.out.println("Department Members: "+ getMembersList());
+    System.out.println("Department Members: " + Arrays.toString(membersList));
+
 }
     
 }
