@@ -1,7 +1,6 @@
 //Implemantation by Jamal Intalo
 //This is the schoolManagement class
 package school.management;
-import java.util.Arrays;
 import java.util.Scanner;
 public class SchoolManagement{
     private String schoolName;
@@ -61,11 +60,11 @@ public void runSchool(){
     //OBJECTS CREATION TO BE GOTTEN FROM USER
     Student student=null;
     Employee  employee=null;
-    //OBJECTS CREATION THAT ARE ALREADY AVAILABLE
-    //Noticeboard noticeBoard =new Noticeboard("SCHOOL COORESPONDENT: UMAR ABDI");
-    //String[] members={"MR. HAMZA","MR. ABUBAKR","MR. BANDAR","MRS. ZAYNAB"};
     Department deptObj=null;
-    //Lab lab=new Lab(600, 200,"CHEMISTRY LAB",700);
+    Lab lab=null;
+    //OBJECTS CREATION THAT ARE ALREADY AVAILABLE
+    Noticeboard noticeBoard =new Noticeboard("SCHOOL COORESPONDENT: UMAR ABDI");
+    //String[] members={"MR. HAMZA","MR. ABUBAKR","MR. BANDAR","MRS. ZAYNAB"};
 
     //MAIN MENU LOOP
     while (true){
@@ -80,11 +79,14 @@ public void runSchool(){
       System.out.println("7.VIEW DEPARTMENT DETAILS");
       System.out.println("8.ADD CONTENT TO NOTICEBOARD");
       System.out.println("9.DISPLAY NOTICEBOARD");
-      System.out.println("10.CHECK IF SCHOOL IS OPEN");
-      System.out.println("11.VIEW LAB DETAILS");
-      System.out.println("12.CHECK IF LAB IS OCCUPIED");
-      System.out.println("13.VIEW CLASSROOM DETAILS");
-      System.out.println("14.EXIT PROGRAM");
+      System.out.println("10.SET SCHOOL TO OPEN");
+      System.out.println("11.SET SCHOOL TO OPEN");
+      System.out.println("12.CHECK IF SCHOOL IS OPEN/CLOSED");
+      System.out.println("13.ADD LAB DETAILS");
+      System.out.println("14.VIEW LAB DETAILS");
+      System.out.println("15.CHECK IF LAB IS OCCUPIED");
+      System.out.println("16.VIEW CLASSROOM DETAILS");
+      System.out.println("17.EXIT PROGRAM");
 
       System.out.println("PLEASE ENTER YOUR CHOICE: ");
       int choice=Scanner.nextInt();
@@ -193,9 +195,52 @@ public void runSchool(){
 
           case 7:
           deptObj.displayDepartmentDetails();
+          break;
 
+          case 8:
+          System.out.println("TYPE WHAT YOU WANT TO ADD TO NOTICEBOARD: ");
+          Scanner.nextLine();
+          String message=Scanner.nextLine();
+          noticeBoard.addContent(message);
+          System.out.println("+++CONTENT ADDED SUCCESSFULLY+++");
+          break;
+
+          case 9:
+          noticeBoard.displayNoticeBoard();
+          break;
+
+          case 10:
+          this.setOpen(true);
+          System.out.println("+++SCHOOL IS NOW OPEN+++");
+          break;
+
+          case 11:
+          this.setOpen(false);
+          System.out.println("+++SCHOOL IS NOW CLOSED+++");
+          break;
+
+          case 12:
+          this.isOpen();
+          break;
+
+          case 13:
+            System.out.println("ENTER LAB ID: ");
+            int labId=Scanner.nextInt();
+            System.out.println("ENTER IN-CHARGE ID: ");
+            int inChargeId=Scanner.nextInt();
+            Scanner.nextLine();
+            System.out.println("ENTER LAB NAME: ");
+            String labName=Scanner.nextLine();
+            System.out.println("ENTER EQUIPMENT ID: ");
+            int equiId=Scanner.nextInt();
+            lab=new Lab(labId, inChargeId, labName, equiId);
+            System.out.println("+++LAB DETAILS ADDED SUCCESSFULLY+++");
+            break;
 
           case 14:
+            lab.isOccupied();
+
+          case 17:
           System.out.println("EXITING...");
           return;
 
