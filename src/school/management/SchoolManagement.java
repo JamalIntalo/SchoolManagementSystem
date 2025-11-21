@@ -62,6 +62,7 @@ public void runSchool(){
     Employee  employee=null;
     Department deptObj=null;
     Lab lab=null;
+    Classroom class1=null;
     //OBJECTS CREATION THAT ARE ALREADY AVAILABLE
     Noticeboard noticeBoard =new Noticeboard("SCHOOL COORESPONDENT: UMAR ABDI");
     //String[] members={"MR. HAMZA","MR. ABUBAKR","MR. BANDAR","MRS. ZAYNAB"};
@@ -80,13 +81,14 @@ public void runSchool(){
       System.out.println("8.ADD CONTENT TO NOTICEBOARD");
       System.out.println("9.DISPLAY NOTICEBOARD");
       System.out.println("10.SET SCHOOL TO OPEN");
-      System.out.println("11.SET SCHOOL TO OPEN");
+      System.out.println("11.SET SCHOOL TO CLOSE");
       System.out.println("12.CHECK IF SCHOOL IS OPEN/CLOSED");
       System.out.println("13.ADD LAB DETAILS");
       System.out.println("14.VIEW LAB DETAILS");
       System.out.println("15.CHECK IF LAB IS OCCUPIED");
-      System.out.println("16.VIEW CLASSROOM DETAILS");
-      System.out.println("17.EXIT PROGRAM");
+      System.out.println("16.ADD CLASSROOM DETAILS");
+      System.out.println("17.VIEW CLASSROOM DETAILS");
+      System.out.println("18.EXIT PROGRAM");
 
       System.out.println("PLEASE ENTER YOUR CHOICE: ");
       int choice=Scanner.nextInt();
@@ -130,13 +132,13 @@ public void runSchool(){
           case 2:
 
           student.displayStudentDetails();
+          break;
 
           case 3:
-
           student.payFees();
+          break;
 
           case 4:
-
           System.out.println("CHOOSE 1 FOR TEACHER AND 2 FOR SUPPORTSTAFF");
           System.out.println("CHOOSE TYPE OF EMPLOYEE: ");
           int type0=Scanner.nextInt();
@@ -238,11 +240,36 @@ public void runSchool(){
             break;
 
           case 14:
+            lab.displayLabDetails();
+            break;
+
+          case 15:
             lab.isOccupied();
+            break;
+
+          case 16:
+            System.out.println("ENTER CLASS ID: ");
+            int class1Id=Scanner.nextInt();
+            System.out.println("ENTER CLASS NAME: ");
+            String className=Scanner.nextLine();
+            Scanner.nextLine();
+            System.out.println("ENTER TEACHER ID: ");
+            int teacherId=Scanner.nextInt();
+            System.out.println("ENTER STUDENT COUNT: ");
+            int stuCount=Scanner.nextInt();
+            System.out.println("ENTER EQUIPMENT ID: ");
+            int equi1Id=Scanner.nextInt();
+            class1=new Classroom(class1Id, className, teacherId, stuCount,equi1Id);
+            System.out.println("+++CLASS DETAILS ADDED SUCCESSFULLY+++");
+            break;
 
           case 17:
-          System.out.println("EXITING...");
-          return;
+            class1.displayClassDetails();
+            break;
+
+          case 18:
+            System.out.println("EXITING...");
+            return;
 
           default:
           System.out.println("INVALID CHOICE TRY AGAIN");
